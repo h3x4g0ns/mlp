@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_socketio import SocketIO
 import cv2
 import numpy as np
@@ -31,6 +31,12 @@ def handle_frame(data):
     _, buffer = cv2.imencode('.jpg', processed_frame)
     socketio.emit('response', buffer)
 
+@socketio.on("hello-world")
+def handle_hello(data):
+    message = "hello world"
+    encoded_message = str.encode(message)
+    socketio.emit("response", encoded_message)
+
 if __name__ == '__main__':
     debug = os.environ.get("DEBUG", None)
-    socketio.run(app=app, debug=debug, host="0.0.0.0", port=5050)
+    socketio.run(app=app, debug=debug, port=5050)
