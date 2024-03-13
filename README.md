@@ -8,5 +8,5 @@ lightweight ML inference server with sockets
 Best way to run server is to run the `docker-compose.yml` file:
 
 ```sh
-docker-compose -f build/Dockerfile up --build
+docker-compose up --build
 ```

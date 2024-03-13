@@ -50,12 +50,12 @@ def handle_hello(data):
 
 
 def main(params):
-    socketio.run(app=app, debug=params.debug, host=params.host, port=params.port)
+    socketio.run(app=app, debug=params.debug, host=params.host, port=params.port, allow_unsafe_werkzeug=True)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="MLP: socket inference server for open-ended ML models")
     parser.add_argument("--host", default="0.0.0.0", help="Host IP address")
-    parser.add_argument("--port", type=int, default=5050, help="Port number")
+    parser.add_argument("--port", type=int, default=42069, help="Port number")
     parser.add_argument("--debug", action="store_true", default=True, help="Debug mode")
     args = parser.parse_args()
     main(args)
