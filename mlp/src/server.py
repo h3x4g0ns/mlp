@@ -2,7 +2,7 @@ from flask import Flask
 from flask_socketio import SocketIO
 import argparse
 
-from .utils import base64_to_img, img_to_base64, process_frame
+from utils import base64_to_img, img_to_base64, process_frame
 
 
 app = Flask(__name__)
