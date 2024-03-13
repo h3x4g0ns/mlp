@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 import cv2
 import numpy as np
 import argparse
+import base64
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -20,16 +21,16 @@ def index():
 
 @socketio.on("frame")
 def handle_frame(data):
-    # Decode the frame
+    data = base64.b64decode(data)
     pimg = np.frombuffer(data, dtype=np.uint8)
     frame = cv2.imdecode(pimg, 1)
 
-    # Process the frame
     processed_frame = process_frame(frame)
 
-    # Send back the processed frame
     _, buffer = cv2.imencode(".jpg", processed_frame)
-    socketio.emit("response", buffer)
+    byte_str = buffer.tobytes()
+    encoded_str = base64.b64encode(byte_str).decode('utf-8')
+    socketio.emit("response", encoded_str)
 
 @socketio.on("hello-world")
 def handle_hello(data):
@@ -45,3 +46,5 @@ if __name__ == "__main__":
     parser.add_argument("--host", default="0.0.0.0", help="Host IP address")
     parser.add_argument("--port", type=int, default=5050, help="Port number")
     parser.add_argument("--debug", action="store_true", default=True, help="Debug mode")
+    args = parser.parse_args()
+    main(args)

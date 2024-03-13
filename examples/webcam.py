@@ -11,11 +11,8 @@ sio.connect('http://localhost:5050')
 @sio.on('response')
 def on_response(data):
     # Decode the processed frame
-    pimg = np.frombuffer(data, dtype=np.uint8)
+    pimg = np.frombuffer(base64.b64decode(data), dtype=np.uint8)
     processed_frame = cv2.imdecode(pimg, 1)
-
-    # Display the processed frame
-    cv2.imshow('Processed Frame', processed_frame)
 
     # Optionally, print out some result or confirmation
     print("Received processed frame from server")
@@ -23,7 +20,7 @@ def on_response(data):
 cap = cv2.VideoCapture(0)
 
 while True:
-    # ret, frame = cap.read()
+    ret, frame = cap.read()  # Uncommented this line
     if not ret:
         break
 

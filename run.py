@@ -26,7 +26,7 @@ def run_command(command, app_name, color):
 
 def run_server():
     app_name = "webserver"
-    command = "cd src && DEBUG=1 python main.py"
+    command = "cd src && DEBUG=1 python server.py"
     return run_command(command, app_name, "green")
 
 def run_client():
