@@ -46,7 +46,7 @@ def handle_hello(data):
     """
     message = "hello world"
     encoded_message = str.encode(message)
-    socketio.emit("response", encoded_message)
+    socketio.emit("hello-response", encoded_message)
 
 
 def main(params):
