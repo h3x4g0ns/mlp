@@ -26,12 +26,12 @@ def run_command(command, app_name, color):
 
 def run_server():
     app_name = "webserver"
-    command = "cd src && DEBUG=1 python main.py"
+    command = "python mlp/src/server.py"
     return run_command(command, app_name, "green")
 
 def run_client():
     app_name = "client"
-    command = "cd examples && sleep 1 && python client.py"
+    command = "sleep 1 && python examples/client.py"
     return run_command(command, app_name, "blue")
 
 # Runs each service as a seperate thread

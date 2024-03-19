@@ -3,7 +3,7 @@ from flask_socketio import SocketIO
 import argparse
 
 from utils import base64_to_img, img_to_base64, process_frame
-
+from process import segment 
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -31,8 +31,6 @@ def handle_segmentation(data):
     Inference function to process the frame and send the result back
     Image is passed in as a base64 encoded string
     """
-    from ..process import segment
-
     frame = base64_to_img(data)
     processed_frame = segment(frame)
     encoded_str = img_to_base64(processed_frame)
