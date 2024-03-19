@@ -1,9 +1,8 @@
-from cv2 import xphoto
 import socketio
 import time
 
 sio = socketio.Client()
-sio.connect('http://localhost:5050')
+sio.connect('http://localhost:42069')
 
 @sio.on('response')
 def on_response(data):

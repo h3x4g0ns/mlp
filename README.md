@@ -3,10 +3,15 @@
 lightweight ML inference server with sockets
 
 
-## Getting Started
+## Installation 
 
-Best way to run server is to run the `docker-compose.yml` file:
+Run the following commands to set up your environment.
 
 ```sh
-docker-compose up --build
+conda create -n mlp_server python=3.11
+conda activate mlp_server
+pip install -r requirements.txt
 ```
+## Getting Started
+
+

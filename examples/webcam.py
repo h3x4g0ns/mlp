@@ -5,7 +5,7 @@ import numpy as np
 
 # Connect to the Flask SocketIO server
 sio = socketio.Client()
-sio.connect('http://localhost:5050')
+sio.connect('http://localhost:42069')
 
 # Event listener for the server response
 @sio.on('response')
