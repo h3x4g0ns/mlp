@@ -48,7 +48,12 @@ def handle_hello(data):
 
 
 def main(params):
-    socketio.run(app=app, debug=params.debug, host=params.host, port=params.port, allow_unsafe_werkzeug=True)
+    socketio.run(app=app, 
+                 debug=params.debug, 
+                 host=params.host, 
+                 port=params.port, 
+                 allow_unsafe_werkzeug=True,
+                 use_reloader=True,)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="MLP: socket inference server for open-ended ML models")
