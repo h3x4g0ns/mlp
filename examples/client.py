@@ -4,6 +4,9 @@ import socketio
 import numpy as np
 import time
 
+# wait 5 seconds for the server to start
+print("Waiting 5 seconds for the server to start...")
+time.sleep(5)
 sio = socketio.Client()
 sio.connect("http://localhost:42069")
 
@@ -34,7 +37,8 @@ while True:
     fps = 1 / (current_time - prev_frame_time)
     prev_frame_time = current_time
     fps_display = "FPS: {:.2f}".format(fps)
-    print(fps_display, end='\r')
+    # print(fps_display, end='\r')
+    print("streaming")
 
     if processed_frame is not None:
         height = max(frame.shape[0], processed_frame.shape[0])

@@ -19,7 +19,7 @@ def run_command(command, app_name, color):
         for fd in reads:
             output = fd.readline().decode().strip()
             if output:
-                print(colored(f"[{app_name}]", color), output)
+                print(colored(f"[{app_name}]", color), output, flush=True)
         if process.poll() is not None:
             break
     return process.returncode
@@ -31,11 +31,11 @@ def run_server():
 
 def run_client():
     app_name = "client"
-    command = "sleep 1 && python examples/client.py"
+    command = "python examples/client.py"
     return run_command(command, app_name, "blue")
 
 # Runs each service as a seperate thread
-thread_names = [run_server, run_client]
+thread_names = [run_client, run_server]
 threads = [threading.Thread(target=thread) for thread in thread_names]
 init()
 [thread.start() for thread in threads]

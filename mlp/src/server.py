@@ -9,10 +9,6 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 
-@app.route("/")
-def index():
-    return "<h1>hello there</h1>" 
-
 @socketio.on("grayscale")
 def handle_grayscale(data):
     """
