@@ -6,3 +6,15 @@ url: https://ekanshagrawal.com/mlp
 
 aux_links:
   Repository: https://github.com/h3x4g0ns/mlp
+
+search_enabled: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
