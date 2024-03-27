@@ -9,11 +9,11 @@ parent: Client
 **Python Script for Real-Time Video Processing and Streaming**
 
 ### Dependencies:
-- OpenCV (`cv2`): Used for video capturing and image processing.
-- Base64: Used for encoding binary data into ASCII characters.
-- SocketIO (`socketio`): Used for real-time communication between the client and the server.
-- NumPy (`np`): Used for handling large, multi-dimensional arrays and matrices.
-- Time: Used for time-related tasks, such as waiting for the server to start.
+- **OpenCV**: Used for video capturing and image processing.
+- **Base64**: Used for encoding binary data into ASCII characters.
+- **SocketIO**: Used for real-time communication between the client and the server.
+- **NumPy**: Used for handling large, multi-dimensional arrays and matrices.
+- **Time**: Used for time-related tasks, such as waiting for the server to start.
 
 ## Workflow:
 1. Server Initialization Wait:
