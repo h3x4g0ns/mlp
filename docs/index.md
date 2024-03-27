@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
 **MLP** is a fast inference server made in Python via Flask and a few other core Python libraries. Communication is handled via websockets.
