@@ -1,5 +1,5 @@
 ---
 layout: default
-title: server.py
+title: events.py
 parent: Server
 ---

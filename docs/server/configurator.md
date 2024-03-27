@@ -1,5 +1,5 @@
 ---
 layout: default
-title: server.py
+title: configurator.py
 parent: Server
 ---
