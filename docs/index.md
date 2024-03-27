@@ -10,6 +10,8 @@ layout: home
 Run the following commands to set up your environment.
 
 ```sh
+git clone https://github.com/h3x4g0ns/mlp
+cd mlp
 conda create -n mlp_server python=3.11
 conda activate mlp_server
 pip install -r requirements.txt
