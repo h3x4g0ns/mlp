@@ -10,3 +10,4 @@ colorama
 termcolor
 requests
 pytest
+python-socketio[client]

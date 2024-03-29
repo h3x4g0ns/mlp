@@ -17,11 +17,12 @@ pip install -r requirements.txt
 For running the server and client together run the following command:
 
 ```sh
-python run.py
+# open up 2 terminals and run the client command in one and the server in another
+conda activate mlp_server
+make server
 
-# basically runs the following commands under the hood
-python mlp/src/server.py &
-python examples/client.py
+conda activate mlp_server
+make client
 ```
 
 ### Running unittests

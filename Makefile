@@ -1,7 +1,9 @@
-.PHONY: run test
+.PHONY: server client test
 
-run:
-	python mlp/src/server.py &
+server:
+	python mlp/src/server.py
+
+client:
 	python examples/client.py
 
 test:
