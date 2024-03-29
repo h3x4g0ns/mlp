@@ -1,13 +1,18 @@
-# mlp
+---
+title: Home
+layout: home
+nav_order: 1
+---
 
-lightweight ML inference server with sockets
-
+**MLP** is a fast inference server made in Python via Flask and a few other core Python libraries. Communication is handled via websockets.
 
 ## Installation 
 
 Run the following commands to set up your environment.
 
 ```sh
+git clone https://github.com/h3x4g0ns/mlp
+cd mlp
 conda create -n mlp_server python=3.11
 conda activate mlp_server
 pip install -r requirements.txt

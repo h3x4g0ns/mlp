@@ -1,6 +1,13 @@
 flask
 flask-socketio
-socketio-client
+python-socketio
 opencv-python
+numpy
+torch
+torchvision
+pillow
 colorama
 termcolor
+requests
+pytest
+python-socketio[client]

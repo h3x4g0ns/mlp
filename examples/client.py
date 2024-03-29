@@ -1,17 +1,20 @@
+import cv2
+import base64
 import socketio
+import numpy as np
 import time
 
+# wait 5 seconds for the server to start
+print("Waiting 5 seconds for the server to start...")
+time.sleep(5)
 sio = socketio.Client()
-sio.connect('http://localhost:5050')
+sio.connect("http://localhost:42069")
 
-@sio.on('response')
-def on_response(data):
-    message = data.decode()
-    print("recieved", message)
+processed_frame = None
 
+# TODO: Define websocket functions here
 
 while True:
-    sio.emit("hello-world", b" ")
-    time.sleep(5)
+    # TODO: main loop happens here
 
-sio.disconnect()
+    pass
